@@ -260,3 +260,17 @@ The `term_id` for Fall 2022 is 2, so I finished with `SELECT COUNT(DISTINCT cour
 Note that `DISTINCT` allows us to count unique elements.
 
 `flag{405}`
+
+<h1>Information Security Enthusiasts</h1>
+
+<h2>Problem</h2>
+
+<h2>Solution</h2>
+
+Full writeup pending.
+
+The query needed in the end was `SELECT COUNT(DISTINCT enrollment_id) FROM enrollments WHERE term_crs_id IN (SELECT term_crs_id FROM term_courses WHERE course_id IN (SELECT course_id FROM courses WHERE title LIKE 'ISSC%') AND term_id=2);`
+
+This gives the answer of 526.
+
+`\flag{526}`
